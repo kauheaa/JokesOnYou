@@ -5,7 +5,7 @@ using TMPro;
 
 public class KeyCardItem : MonoBehaviour
 {
-    public Dialogues dialoguesScript; // Reference to the Dialogues script
+    public DavDialogues dialoguesScript; // Reference to the Dialogues script
 
     public GameObject keyCard;
 
@@ -13,27 +13,24 @@ public class KeyCardItem : MonoBehaviour
 
     public GameObject devWall;
 
+    public bool gotId = false;
+
     void Update()
     {
         // Check if the dialogues script is completed
-        if (dialoguesScript != null && dialoguesScript.DialogueCompleted)
+        if (dialoguesScript != null && dialoguesScript.DialogueCompleted && !gotId)
         {
             GetKeyCard();
         }
 
     }
-    void GetKeyCard()
+    public void GetKeyCard()
     {
         keyCard.SetActive(true);
 
-        questText.text = "Find Dav's ID";
-
-        OpenDevDoor(true);
-    }
-
-    void OpenDevDoor(bool enable)
-    {
-        Collider devCollider = devWall.GetComponent<Collider>();
-        devCollider.isTrigger = enable;
+        if (keyCard.gameObject.activeInHierarchy == true)
+        {
+            questText.text = "Find Dav's ID";
+        }
     }
 }

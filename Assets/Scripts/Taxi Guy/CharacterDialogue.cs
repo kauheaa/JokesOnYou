@@ -26,6 +26,12 @@ public class CharacterDialogue : MonoBehaviour
             dialogueTriggered = true;
             TriggerDialogue();
         }
+        if (other.CompareTag("Player") && dialogueCompleted)
+        {
+            dialogueText.text = "PLAYER: You are a taxi";
+            taskText.text = "";
+            dialogueCompleted = false;
+        }
     }
 
     void TriggerDialogue()
@@ -33,10 +39,6 @@ public class CharacterDialogue : MonoBehaviour
         if (dialogues.Length > 0)
         {
             StartCoroutine(DisplayDialogue());
-        }
-        else
-        {
-            Debug.LogWarning("No dialogues set for this character.");
         }
     }
 
@@ -58,11 +60,10 @@ public class CharacterDialogue : MonoBehaviour
         if (taxiPoleCollider != null)
         {
             taxiPoleCollider.isTrigger = enable;
-            Debug.Log("Taxi Pole collider trigger enabled: " + enable);
         }
         else
         {
-            Debug.LogError("Collider component not found on the specified object.");
+            return;
         }
     }
 
@@ -82,7 +83,6 @@ public class CharacterDialogue : MonoBehaviour
 
         // Set the dialogueCompleted flag
         dialogueCompleted = true;
-        Debug.Log("Dialogue completed: " + dialogueCompleted);
 
         // Enable the Taxi Pole collider trigger immediately when the dialogue is completed
         EnableTaxiPoleCollider(true);
@@ -94,11 +94,7 @@ public class CharacterDialogue : MonoBehaviour
         // Check for 'E' input to clear the UI text
         if (dialogueCompleted && Input.GetKeyDown(KeyCode.E))
         {
-            // Clear the UI text
             dialogueText.text = "";
-
-            // You can add additional logic here based on the quest/task
-            // For example, complete the quest or update the UI
         }
     }
 }
