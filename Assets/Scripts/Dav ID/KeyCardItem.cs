@@ -21,7 +21,7 @@ public class KeyCardItem : MonoBehaviour
         if (dialoguesScript != null && dialoguesScript.DialogueCompleted && !gotId)
         {
             GetKeyCard();
-            gameStudioDialogue.SetTriggerState(false);
+            gameStudioDialogue.SetTriggerState(true);
         }
 
     }

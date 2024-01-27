@@ -44,6 +44,7 @@ public class DavDialogues : MonoBehaviour
             return;
         }
     }
+    public StoreDoorTrigger doorTrigger;
     IEnumerator DisplayIDDialogue()
     {
         // Display the first dialogue
@@ -76,6 +77,8 @@ public class DavDialogues : MonoBehaviour
         requiredItem.SetActive(false);
 
         storeIsOpen = true;
+
+        doorTrigger.SetTriggerState(true);
         taskText.iDTaskText.text = "Get the groceries";
     }
 
