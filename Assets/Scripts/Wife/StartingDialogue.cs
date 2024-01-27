@@ -11,13 +11,18 @@ public class StartingDialogue : MonoBehaviour
     public TMP_Text dialogueText;      // Reference to the UI Text element for dialogues
 
     private bool dialogueCompleted = false;
+    public PlayerMovement playerMovement;
     public bool DialogueCompleted
     {
         get { return dialogueCompleted; }
     }
 
     public Transform teleportDestination; // Reference to the teleport destination
-
+    void Start()
+    {
+        // Get the PlayerMovement script component
+        playerMovement = GameObject.Find("Churro").GetComponent<PlayerMovement>();
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !dialogueTriggered)
@@ -30,12 +35,15 @@ public class StartingDialogue : MonoBehaviour
     void TriggerDialogue()
     {
         if (dialogues.Length > 0)
-        {
+        { 
+            // Disable player movement here
+            playerMovement.enabled = false;
+
             StartCoroutine(DisplayDialogue());
         }
         else
         {
-            Debug.LogWarning("No dialogues set for this character.");
+            return;
         }
     }
 
@@ -51,7 +59,6 @@ public class StartingDialogue : MonoBehaviour
         }
 
         dialogueCompleted = true;
-        Debug.Log("Dialogue completed: " + dialogueCompleted);
 
         // Teleport the player to the specified destination
         if (teleportDestination != null)
@@ -62,12 +69,14 @@ public class StartingDialogue : MonoBehaviour
 
     void TeleportPlayer(Vector3 destination)
     {
-        GameObject playerObject = GameObject.Find("Player");
+        GameObject playerObject = GameObject.Find("Churro");
 
         if (playerObject != null)
         {
             Transform playerTransform = playerObject.transform;
             playerTransform.position = destination;
+            playerTransform.rotation = Quaternion.Euler(0f,0f,0f);
+            playerMovement.enabled = true;
         }
     }
 
