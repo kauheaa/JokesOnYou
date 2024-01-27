@@ -6,6 +6,18 @@ public class GameStudioDialogue : MonoBehaviour
 {
     public KeyCardItem keyCardItem;
     public DavDialogues davDialogues;
+    private Collider triggerCollider;
+
+    void Start()
+    {
+        // Assuming your collider is attached to the same GameObject as this script
+        triggerCollider = GetComponent<Collider>();
+    }
+
+    public void SetTriggerState(bool isTrigger)
+    {
+        triggerCollider.isTrigger = isTrigger;
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && keyCardItem.keyCard.activeInHierarchy == true)
@@ -14,6 +26,7 @@ public class GameStudioDialogue : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 davDialogues.dialogueText.text = "";
+
             }
         }
         else

@@ -14,13 +14,14 @@ public class KeyCardItem : MonoBehaviour
     public GameObject devWall;
 
     public bool gotId = false;
-
+    public GameStudioDialogue gameStudioDialogue;
     void Update()
     {
         // Check if the dialogues script is completed
         if (dialoguesScript != null && dialoguesScript.DialogueCompleted && !gotId)
         {
             GetKeyCard();
+            gameStudioDialogue.SetTriggerState(false);
         }
 
     }
