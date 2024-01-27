@@ -59,7 +59,6 @@ public class StartingDialogue : MonoBehaviour
         }
 
         dialogueCompleted = true;
-        Debug.Log("Dialogue completed: " + dialogueCompleted);
 
         // Teleport the player to the specified destination
         if (teleportDestination != null)
@@ -77,6 +76,7 @@ public class StartingDialogue : MonoBehaviour
             Transform playerTransform = playerObject.transform;
             playerTransform.position = destination;
             playerTransform.rotation = Quaternion.Euler(0f,0f,0f);
+            playerMovement.enabled = true;
         }
     }
 
