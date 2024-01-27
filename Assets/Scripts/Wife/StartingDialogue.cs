@@ -50,7 +50,6 @@ public class StartingDialogue : MonoBehaviour
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
         }
 
-        // Set the dialogueCompleted flag
         dialogueCompleted = true;
         Debug.Log("Dialogue completed: " + dialogueCompleted);
 
@@ -70,22 +69,14 @@ public class StartingDialogue : MonoBehaviour
             Transform playerTransform = playerObject.transform;
             playerTransform.position = destination;
         }
-        else
-        {
-            Debug.LogError("Player object not found.");
-        }
     }
 
     void Update()
     {
-        // Check for 'E' input to clear the UI text
         if (dialogueCompleted && Input.GetKeyDown(KeyCode.E))
         {
-            // Clear the UI text
             dialogueText.text = "";
 
-            // You can add additional logic here based on the quest/task
-            // For example, complete the quest or update the UI
         }
     }
 }

@@ -6,6 +6,10 @@ TagManager:
   tags:
   - NPC
   - devWall
+  - KitchenTrigger
+  - PlazaTrigger
+  - DevRoomTrigger
+  - StoreTrigger
   layers:
   - Default
   - TransparentFX

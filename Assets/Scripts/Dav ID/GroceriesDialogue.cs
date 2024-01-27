@@ -3,18 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Dialogues : MonoBehaviour
+public class GroceriesDialogue : MonoBehaviour
 {
     public string[] dialogues;
     private bool dialogueTriggered = false;
-
-    public TMP_Text dialogueText;      // Reference to the UI Text element for dialogues
-
     private bool dialogueCompleted = false;
-    public bool DialogueCompleted
-    {
-        get { return dialogueCompleted; }
-    }
+    public TMP_Text dialogueText;
+
+    public TMP_Text taskText;
+    public GameObject groceries;
 
     void OnTriggerEnter(Collider other)
     {
@@ -24,7 +21,6 @@ public class Dialogues : MonoBehaviour
             TriggerDialogue();
         }
     }
-
     void TriggerDialogue()
     {
         if (dialogues.Length > 0)
@@ -33,10 +29,9 @@ public class Dialogues : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("No dialogues set for this character.");
+            return;
         }
     }
-
     IEnumerator DisplayDialogue()
     {
         foreach (string sentence in dialogues)
@@ -50,10 +45,7 @@ public class Dialogues : MonoBehaviour
 
         // Set the dialogueCompleted flag
         dialogueCompleted = true;
-        Debug.Log("Dialogue completed: " + dialogueCompleted);
     }
-
-
     void Update()
     {
         // Check for 'E' input to clear the UI text
@@ -61,6 +53,8 @@ public class Dialogues : MonoBehaviour
         {
             // Clear the UI text
             dialogueText.text = "";
+            groceries.SetActive(true);
+            taskText.text = "Take the groceries back home";
         }
     }
 }
