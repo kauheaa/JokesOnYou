@@ -20,6 +20,12 @@ public class StartingDialogue : MonoBehaviour
     }
 
     public Transform teleportDestination; // Reference to the teleport destination
+    private void Awake()
+    {
+        dialogueTriggered = true;
+        dialoguePanel.SetActive(true);
+        TriggerDialogue();
+    }
     void Start()
     {
         // Get the PlayerMovement script component
