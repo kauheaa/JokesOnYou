@@ -16,6 +16,18 @@ public class PlayerMovement : MonoBehaviour
         movementDirection.Normalize();
 
         transform.Translate(movementDirection * speed * Time.deltaTime, Space.World);
+        // Set the "isRunning" trigger in the Animator
+        if (animator != null)
+        {
+            if (movementDirection.magnitude > 0f)
+            {
+                animator.SetTrigger("isRunning");
+            }
+            else
+            {
+                animator.ResetTrigger("isRunning");
+            }
+        }
 
         if (movementDirection != Vector3.zero)
         {

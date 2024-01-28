@@ -16,12 +16,18 @@ public class CharacterDialogue : MonoBehaviour
     public GameObject textPanel;
     public GameObject dialoguePanel;
 
+    private AudioHandler audioManager;
+    public AudioClip clip;
+
     private bool dialogueCompleted = false;
     public bool DialogueCompleted
     {
         get { return dialogueCompleted; }
     }
-
+    private void Start()
+    {
+        audioManager = AudioHandler.instance;
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !dialogueTriggered)
@@ -34,6 +40,7 @@ public class CharacterDialogue : MonoBehaviour
             dialoguePanel.SetActive(true);
             dialogueText.text = "PLAYER: You are a taxi";
             taskText.text = "";
+            audioManager.PlayAudioClip(clip);
             textPanel.SetActive(false);
             dialogueCompleted = false;
         }
