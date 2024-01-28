@@ -96,6 +96,7 @@ public class DavDialogues : MonoBehaviour
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
         dialogueText.text = "";
 
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
         requiredItem.SetActive(false);
 
         storeIsOpen = true;
