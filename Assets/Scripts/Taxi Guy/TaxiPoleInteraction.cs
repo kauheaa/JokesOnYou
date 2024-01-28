@@ -6,6 +6,7 @@ using TMPro;
 public class TaxiPoleInteraction : MonoBehaviour
 {
     public TMP_Text dialogueText;
+    public GameObject dialoguePanel;
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -14,6 +15,7 @@ public class TaxiPoleInteraction : MonoBehaviour
             Collider taxiPoleCollider = GetComponent<Collider>();
             if (taxiPoleCollider != null && taxiPoleCollider.enabled)
             {
+                dialoguePanel.SetActive(true);
                 StartInteraction();
             }
             else

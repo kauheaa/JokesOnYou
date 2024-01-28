@@ -8,6 +8,8 @@ public class LightSwitch : MonoBehaviour
     public TMP_Text dialogueText;
     public TMP_Text taskText;
     public bool DialogueCompleted = false;
+    public GameObject dialoguePanel;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -16,6 +18,7 @@ public class LightSwitch : MonoBehaviour
             Collider lightSwitchCollider = GetComponent<Collider>();
             if (lightSwitchCollider != null && lightSwitchCollider.enabled)
             {
+                dialoguePanel.SetActive(true);
                 StartInteraction();
             }
             else
@@ -30,8 +33,8 @@ public class LightSwitch : MonoBehaviour
         dialogueText.text = "*CLICK*";
         taskText.text = "";
         DialogueCompleted = true;
-        Debug.Log("Lightning changes");
         DisableLightSwitchCollider(false);
+
     }
     void DisableLightSwitchCollider(bool disable)
     {

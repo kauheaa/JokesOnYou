@@ -13,6 +13,8 @@ public class KeyCardItem : MonoBehaviour
 
     public GameObject devWall;
 
+    public GameObject textPanel;
+
     public bool gotId = false;
     public GameStudioDialogue gameStudioDialogue;
     void Update()
@@ -31,6 +33,7 @@ public class KeyCardItem : MonoBehaviour
 
         if (keyCard.gameObject.activeInHierarchy == true)
         {
+            textPanel.SetActive(true);
             questText.text = "Find Dav's ID";
         }
     }

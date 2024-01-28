@@ -8,6 +8,8 @@ public class DavDialogues : MonoBehaviour
     public string[] dialogues;
     private bool dialogueTriggered = false;
 
+    public GameObject dialoguePanel;
+
     public TMP_Text dialogueText;      // Reference to the UI Text element for dialogues
 
     private bool dialogueCompleted = false;
@@ -25,10 +27,13 @@ public class DavDialogues : MonoBehaviour
         if (other.CompareTag("Player") && !dialogueTriggered && requiredItem.activeInHierarchy == false)
         {
             dialogueTriggered = true;
+
+            dialoguePanel.SetActive(true);
             TriggerDialogue();
         }
         else if (requiredItem.activeInHierarchy == true)
         {
+            dialoguePanel.SetActive(true);
             StartCoroutine(DisplayIDDialogue());
         }
     }
@@ -37,6 +42,7 @@ public class DavDialogues : MonoBehaviour
     {
         if (dialogues.Length > 0)
         {
+            dialoguePanel.SetActive(true);
             StartCoroutine(DisplayDialogue());
         }
         else
@@ -55,21 +61,29 @@ public class DavDialogues : MonoBehaviour
         dialogueText.text = "";
 
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
+
+        dialoguePanel.SetActive(true);
         dialogueText.text = "PLAYER: My pleasure DavID";
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
         dialogueText.text = "";
 
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
+
+        dialoguePanel.SetActive(true);
         dialogueText.text = "DAVID the game dev: Did you get your bread yet";
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
         dialogueText.text = "";
 
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
+
+        dialoguePanel.SetActive(true);
         dialogueText.text = "PLAYER: Nope, the store is still not open. The new part timer is late...";
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
         dialogueText.text = "";
 
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
+
+        dialoguePanel.SetActive(true);
         dialogueText.text = "DAVID the part-timer: OH SHOOT! I forgot! My part-time job! I gotta run, BYE!";
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
         dialogueText.text = "";
@@ -86,6 +100,8 @@ public class DavDialogues : MonoBehaviour
     {
         foreach (string sentence in dialogues)
         {
+
+            dialoguePanel.SetActive(true);
             // Set the text on the UI element for a sentence
             dialogueText.text = sentence;
 
@@ -95,7 +111,6 @@ public class DavDialogues : MonoBehaviour
 
         // Set the dialogueCompleted flag
         dialogueCompleted = true;
-        Debug.Log("Dialogue completed: " + dialogueCompleted);
     }
 
 
@@ -106,6 +121,7 @@ public class DavDialogues : MonoBehaviour
         {
             // Clear the UI text
             dialogueText.text = "";
+
         }
     }
 }

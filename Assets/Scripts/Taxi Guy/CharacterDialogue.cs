@@ -13,6 +13,9 @@ public class CharacterDialogue : MonoBehaviour
     public TMP_Text taskText;          // Reference to the UI Text element for tasks
     public GameObject taxiPoleObject;  // Reference to the Taxi Pole object
 
+    public GameObject textPanel;
+    public GameObject dialoguePanel;
+
     private bool dialogueCompleted = false;
     public bool DialogueCompleted
     {
@@ -28,8 +31,10 @@ public class CharacterDialogue : MonoBehaviour
         }
         if (other.CompareTag("Player") && dialogueCompleted)
         {
+            dialoguePanel.SetActive(true);
             dialogueText.text = "PLAYER: You are a taxi";
             taskText.text = "";
+            textPanel.SetActive(false);
             dialogueCompleted = false;
         }
     }
@@ -38,6 +43,7 @@ public class CharacterDialogue : MonoBehaviour
     {
         if (dialogues.Length > 0)
         {
+            dialoguePanel.SetActive(true);
             StartCoroutine(DisplayDialogue());
         }
     }
@@ -71,12 +77,15 @@ public class CharacterDialogue : MonoBehaviour
     {
         foreach (string sentence in dialogues)
         {
+            dialoguePanel.SetActive(true);
             // Set the text on the UI element for a sentence
             dialogueText.text = sentence;
 
             // Wait for 'E' input to proceed to the next sentence
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
         }
+
+        textPanel.SetActive(true);
 
         // Set the task in the UI
         SetTask("Call Taxi guy a taxi.");
@@ -94,6 +103,7 @@ public class CharacterDialogue : MonoBehaviour
         // Check for 'E' input to clear the UI text
         if (dialogueCompleted && Input.GetKeyDown(KeyCode.E))
         {
+            dialoguePanel.SetActive(false);
             dialogueText.text = "";
         }
     }

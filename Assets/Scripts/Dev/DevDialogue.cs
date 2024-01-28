@@ -21,6 +21,12 @@ public class DevDialogue : MonoBehaviour
     public GameObject keyCard;
 
     public KeyCardItem keyCardItem;
+
+    public GameObject taskTextPanel;
+
+    public GameStudioDialogue doorLocked;
+
+    public GameObject dialoguePanel;
     public bool DialogueCompleted
     {
         get { return dialogueCompleted; }
@@ -30,6 +36,7 @@ public class DevDialogue : MonoBehaviour
     {
         if (other.CompareTag("Player") && !dialogueTriggered && requiredItem.activeInHierarchy == true)
         {
+            dialoguePanel.SetActive(true);
             dialogueTriggered = true;
             TriggerDialogue();
         }
@@ -40,6 +47,7 @@ public class DevDialogue : MonoBehaviour
         }
         else
         {
+            dialoguePanel.SetActive(true);
             dialogueText.text = "DEV: What?";
             if (dialogueCompleted && Input.GetKeyDown(KeyCode.E))
             {
@@ -53,11 +61,14 @@ public class DevDialogue : MonoBehaviour
     {
         if (dialogues.Length > 0)
         {
+            dialoguePanel.SetActive(true);
             StartCoroutine(DisplayDialogue());
         }
     }
     IEnumerator DisplayLightSwitchDialogue()
     {
+        dialoguePanel.SetActive(true);
+        taskTextPanel.SetActive(false);
         // Display the first dialogue
         dialogueText.text = "DEV: Thanks a bunch";
 
@@ -67,16 +78,20 @@ public class DevDialogue : MonoBehaviour
 
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
 
+        dialoguePanel.SetActive(true);
         dialogueText.text = "Player: Why do you not want the light on?";
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
         dialogueText.text = "";
 
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
 
+        dialoguePanel.SetActive(true);
         dialogueText.text = "Dev: It attracts bugs";
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
         dialogueText.text = "";
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
+
+        dialoguePanel.SetActive(true);
         dialogueText.text = "Hey! I just remembered, Dav must be looking for this. If you see him around could you give it to him?";
         // Wait for the next 'E' key press
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
@@ -95,9 +110,12 @@ public class DevDialogue : MonoBehaviour
         keyCardItem.keyCard.SetActive(false);
 
         iDTaskText.text = "Take ID back to DAV ";
+
+        doorLocked.SetTriggerState(false);
     }
     void SetTask(string task)
     {
+        dialoguePanel.SetActive(true);
         taskText.text = task;
 
         // Enable interaction with the Taxi Pole when the dialogue is completed
@@ -133,6 +151,8 @@ public class DevDialogue : MonoBehaviour
 
         // Set the dialogueCompleted flag
         dialogueCompleted = true;
+
+        taskTextPanel.SetActive(true);
 
         // Set the task in the UI
         SetTask("Switch game studio in dark mode");

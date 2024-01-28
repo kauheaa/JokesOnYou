@@ -10,8 +10,13 @@ public class GroceriesDialogue : MonoBehaviour
     private bool dialogueCompleted = false;
     public TMP_Text dialogueText;
 
+    public GameObject textPanel;
     public TMP_Text taskText;
     public GameObject groceries;
+    public HomeDoorTrigger homeDoor;
+
+
+    public GameObject dialoguePanel;
 
     void OnTriggerEnter(Collider other)
     {
@@ -36,6 +41,7 @@ public class GroceriesDialogue : MonoBehaviour
     {
         foreach (string sentence in dialogues)
         {
+            dialoguePanel.SetActive(true);
             // Set the text on the UI element for a sentence
             dialogueText.text = sentence;
 
@@ -53,8 +59,11 @@ public class GroceriesDialogue : MonoBehaviour
         {
             // Clear the UI text
             dialogueText.text = "";
+            textPanel.SetActive(true);
             groceries.SetActive(true);
+            dialoguePanel.SetActive(false);
             taskText.text = "Take the groceries back home";
+            homeDoor.SetTriggerState(true);
         }
     }
 }

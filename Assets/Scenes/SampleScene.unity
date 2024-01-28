@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 68979959}
   - component: {fileID: 68979963}
   m_Layer: 0
-  m_Name: Taxi Pole
+  m_Name: Phone Booth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -279,7 +279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68979958}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19.69862, y: -7.6266336, z: 26.933062}
+  m_LocalPosition: {x: -15, y: -7.6266336, z: 10.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -299,6 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 1230584276}
+  dialoguePanel: {fileID: 594673910}
 --- !u!1001 &96592904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -361,6 +362,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5453308351226513736, guid: 229dda5809ba33547bf5f5ba0fd29636, type: 3}
   m_PrefabInstance: {fileID: 96592904}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &173011236 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 231892814890325263, guid: 1b989231e3da278499dcd76c9f7c602f, type: 3}
+  m_PrefabInstance: {fileID: 1938179232}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &173011240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173011236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b7810b6d7adf2b4f8e1fe971d096525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  davDialogues: {fileID: 571741829971268677}
+  dialoguePanel: {fileID: 594673910}
+--- !u!65 &173011241
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173011236}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.7530503, y: 9.014152, z: 6.435371}
+  m_Center: {x: 0.09470426, y: 4.3941684, z: 0}
 --- !u!1001 &185221845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -435,7 +468,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &203420156
 RectTransform:
   m_ObjectHideFlags: 0
@@ -452,10 +485,10 @@ RectTransform:
   m_Father: {fileID: 451462784}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 190, y: -60}
+  m_SizeDelta: {x: 370, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &203420157
 MonoBehaviour:
@@ -837,6 +870,8 @@ GameObject:
   - component: {fileID: 359376189}
   - component: {fileID: 359376190}
   - component: {fileID: 359376191}
+  - component: {fileID: 359376192}
+  - component: {fileID: 359376193}
   m_Layer: 0
   m_Name: Home Wall
   m_TagString: Untagged
@@ -950,6 +985,7 @@ MonoBehaviour:
   teleportDestination: {fileID: 1930100762}
   groceries: {fileID: 5828404699697077611}
   dialogueText: {fileID: 1230584276}
+  dialoguePanel: {fileID: 594673910}
 --- !u!64 &359376191
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -964,6 +1000,31 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &359376192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359376184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0304b931640e09e46a7a9f72fdc4c3aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &359376193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359376184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60d57098eda839c489b13d8961f9ba08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportDestination: {fileID: 1930100762}
 --- !u!1 &371888705
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,6 +1139,7 @@ MonoBehaviour:
   dialogueText: {fileID: 1230584276}
   taskText: {fileID: 1537666904}
   DialogueCompleted: 0
+  dialoguePanel: {fileID: 594673910}
 --- !u!1 &386677487
 GameObject:
   m_ObjectHideFlags: 0
@@ -2747,7 +2809,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1013057456
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2764,10 +2826,10 @@ RectTransform:
   m_Father: {fileID: 451462784}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 190, y: -60}
+  m_SizeDelta: {x: 370, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1013057457
 MonoBehaviour:
@@ -3653,6 +3715,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1983425766}
     - target: {fileID: 7186574168505935229, guid: f54b12d987df39047a80e2a2f119325d, type: 3}
+      propertyPath: textPanel
+      value: 
+      objectReference: {fileID: 1013057455}
+    - target: {fileID: 7186574168505935229, guid: f54b12d987df39047a80e2a2f119325d, type: 3}
       propertyPath: dialoguesScript
       value: 
       objectReference: {fileID: 571741829971268677}
@@ -3753,7 +3819,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1329666668
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3770,10 +3836,10 @@ RectTransform:
   m_Father: {fileID: 451462784}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 190, y: -60}
+  m_SizeDelta: {x: 370, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1329666669
 MonoBehaviour:
@@ -4710,6 +4776,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyCardItem: {fileID: 1316521420}
   davDialogues: {fileID: 571741829971268677}
+  dialoguePanel: {fileID: 594673910}
+--- !u!1 &1745230038 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 231892814890325263, guid: 1b989231e3da278499dcd76c9f7c602f, type: 3}
+  m_PrefabInstance: {fileID: 761961664}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1745230042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745230038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 504b58d71e0eb8d4b8150bdcac4da90a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyCardItem: {fileID: 1316521420}
+  davDialogues: {fileID: 571741829971268677}
+  dialoguePanel: {fileID: 594673910}
+--- !u!65 &1745230043
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745230038}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.753052, y: 9.014152, z: 6.4353724}
+  m_Center: {x: 0.09470429, y: 4.3941684, z: 0}
 --- !u!1 &1788135080
 GameObject:
   m_ObjectHideFlags: 0
@@ -5036,6 +5136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   davDialogues: {fileID: 571741829971268677}
+  dialoguePanel: {fileID: 594673910}
 --- !u!114 &1931466691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5681,6 +5782,55 @@ PrefabInstance:
       propertyPath: requiredItem
       value: 
       objectReference: {fileID: 1947312135}
+    - target: {fileID: 5258798182138035917, guid: 53703e2bc6e9d9c4181fa423880127ed, type: 3}
+      propertyPath: dialoguePanel
+      value: 
+      objectReference: {fileID: 594673910}
+    - target: {fileID: 5258798182138035917, guid: 53703e2bc6e9d9c4181fa423880127ed, type: 3}
+      propertyPath: dialogues.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258798182138035917, guid: 53703e2bc6e9d9c4181fa423880127ed, type: 3}
+      propertyPath: dialogues.Array.data[0]
+      value: 'DAV the game dev: Hello there, how are you?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258798182138035917, guid: 53703e2bc6e9d9c4181fa423880127ed, type: 3}
+      propertyPath: dialogues.Array.data[2]
+      value: 'PLAYER: I need to go get some bread'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258798182138035917, guid: 53703e2bc6e9d9c4181fa423880127ed, type: 3}
+      propertyPath: dialogues.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258798182138035917, guid: 53703e2bc6e9d9c4181fa423880127ed, type: 3}
+      propertyPath: dialogues.Array.data[4]
+      value: 'PLAYER: Sup, DAV?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258798182138035917, guid: 53703e2bc6e9d9c4181fa423880127ed, type: 3}
+      propertyPath: dialogues.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258798182138035917, guid: 53703e2bc6e9d9c4181fa423880127ed, type: 3}
+      propertyPath: dialogues.Array.data[6]
+      value: 'DAV the game dev: I lost my ID, have you seen it?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258798182138035917, guid: 53703e2bc6e9d9c4181fa423880127ed, type: 3}
+      propertyPath: dialogues.Array.data[7]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258798182138035917, guid: 53703e2bc6e9d9c4181fa423880127ed, type: 3}
+      propertyPath: dialogues.Array.data[8]
+      value: 'Player: Can''t say I have'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258798182138035917, guid: 53703e2bc6e9d9c4181fa423880127ed, type: 3}
+      propertyPath: dialogues.Array.data[9]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258798182138035917, guid: 53703e2bc6e9d9c4181fa423880127ed, type: 3}
+      propertyPath: dialogues.Array.data[10]
+      value: 'Dav the game dev: I think I left it at work.. Would you mind running
+        by? Here, borrow my keycard'
+      objectReference: {fileID: 0}
     - target: {fileID: 6526982949953452950, guid: 53703e2bc6e9d9c4181fa423880127ed, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.683
@@ -5781,9 +5931,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1293716347}
     - target: {fileID: 1037243700583052899, guid: 87a2f2626ce40be44ba605efe110471d, type: 3}
+      propertyPath: textPanel
+      value: 
+      objectReference: {fileID: 1329666667}
+    - target: {fileID: 1037243700583052899, guid: 87a2f2626ce40be44ba605efe110471d, type: 3}
       propertyPath: dialogueText
       value: 
       objectReference: {fileID: 1230584276}
+    - target: {fileID: 1037243700583052899, guid: 87a2f2626ce40be44ba605efe110471d, type: 3}
+      propertyPath: dialoguePanel
+      value: 
+      objectReference: {fileID: 594673910}
     - target: {fileID: 1037243700583052899, guid: 87a2f2626ce40be44ba605efe110471d, type: 3}
       propertyPath: taxiPoleObject
       value: 
@@ -6644,6 +6802,10 @@ PrefabInstance:
       value: NPC
       objectReference: {fileID: 0}
     - target: {fileID: 4826076018653825584, guid: c85fdeae328ae6e49970922afa0e324e, type: 3}
+      propertyPath: homeDoor
+      value: 
+      objectReference: {fileID: 359376192}
+    - target: {fileID: 4826076018653825584, guid: c85fdeae328ae6e49970922afa0e324e, type: 3}
       propertyPath: taskText
       value: 
       objectReference: {fileID: 1983425766}
@@ -6652,9 +6814,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 574185238}
     - target: {fileID: 4826076018653825584, guid: c85fdeae328ae6e49970922afa0e324e, type: 3}
+      propertyPath: textPanel
+      value: 
+      objectReference: {fileID: 1013057455}
+    - target: {fileID: 4826076018653825584, guid: c85fdeae328ae6e49970922afa0e324e, type: 3}
       propertyPath: dialogueText
       value: 
       objectReference: {fileID: 1230584276}
+    - target: {fileID: 4826076018653825584, guid: c85fdeae328ae6e49970922afa0e324e, type: 3}
+      propertyPath: dialoguePanel
+      value: 
+      objectReference: {fileID: 594673910}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c85fdeae328ae6e49970922afa0e324e, type: 3}
 --- !u!4 &5828404699697077609 stripped
@@ -6894,6 +7064,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1537666904}
     - target: {fileID: 635301611411248734, guid: 7859e6a4b4836cd49984485df14d7f44, type: 3}
+      propertyPath: doorLocked
+      value: 
+      objectReference: {fileID: 1732356514}
+    - target: {fileID: 635301611411248734, guid: 7859e6a4b4836cd49984485df14d7f44, type: 3}
       propertyPath: iDTaskText
       value: 
       objectReference: {fileID: 1983425766}
@@ -6913,6 +7087,14 @@ PrefabInstance:
       propertyPath: requiredItem
       value: 
       objectReference: {fileID: 853659767}
+    - target: {fileID: 635301611411248734, guid: 7859e6a4b4836cd49984485df14d7f44, type: 3}
+      propertyPath: dialoguePanel
+      value: 
+      objectReference: {fileID: 594673910}
+    - target: {fileID: 635301611411248734, guid: 7859e6a4b4836cd49984485df14d7f44, type: 3}
+      propertyPath: taskTextPanel
+      value: 
+      objectReference: {fileID: 203420155}
     - target: {fileID: 7528441502231324046, guid: 7859e6a4b4836cd49984485df14d7f44, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -7220,6 +7402,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1230584276}
     - target: {fileID: 1159571856, guid: e7bce2c3969df4a4796aadaebf11d4bd, type: 3}
+      propertyPath: dialoguePanel
+      value: 
+      objectReference: {fileID: 594673910}
+    - target: {fileID: 1159571856, guid: e7bce2c3969df4a4796aadaebf11d4bd, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 1316521421}
+    - target: {fileID: 1159571856, guid: e7bce2c3969df4a4796aadaebf11d4bd, type: 3}
       propertyPath: teleportDestination
       value: 
       objectReference: {fileID: 1654287121}
@@ -7228,6 +7418,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1230584276}
     - target: {fileID: 1153892323117966600, guid: e7bce2c3969df4a4796aadaebf11d4bd, type: 3}
+      propertyPath: dialoguePanel
+      value: 
+      objectReference: {fileID: 594673910}
+    - target: {fileID: 1153892323117966600, guid: e7bce2c3969df4a4796aadaebf11d4bd, type: 3}
       propertyPath: playerMovement
       value: 
       objectReference: {fileID: 1316521421}
@@ -7235,6 +7429,10 @@ PrefabInstance:
       propertyPath: teleportDestination
       value: 
       objectReference: {fileID: 1654287121}
+    - target: {fileID: 1153892323117966600, guid: e7bce2c3969df4a4796aadaebf11d4bd, type: 3}
+      propertyPath: dialogues.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2794979087330618903, guid: e7bce2c3969df4a4796aadaebf11d4bd, type: 3}
       propertyPath: m_Name
       value: PauliTheCat

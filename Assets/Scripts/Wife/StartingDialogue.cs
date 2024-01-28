@@ -10,6 +10,8 @@ public class StartingDialogue : MonoBehaviour
 
     public TMP_Text dialogueText;      // Reference to the UI Text element for dialogues
 
+    public GameObject dialoguePanel;
+
     private bool dialogueCompleted = false;
     public PlayerMovement playerMovement;
     public bool DialogueCompleted
@@ -28,6 +30,7 @@ public class StartingDialogue : MonoBehaviour
         if (other.CompareTag("Player") && !dialogueTriggered)
         {
             dialogueTriggered = true;
+            dialoguePanel.SetActive(true);
             TriggerDialogue();
         }
     }
@@ -84,8 +87,8 @@ public class StartingDialogue : MonoBehaviour
     {
         if (dialogueCompleted && Input.GetKeyDown(KeyCode.E))
         {
+            dialoguePanel.SetActive(false);
             dialogueText.text = "";
-
         }
     }
 }
