@@ -6,7 +6,7 @@ public class AudioHandler : MonoBehaviour
 {
     public static AudioHandler instance; // Singleton instance
 
-    public AudioSource backgroundMusic;
+    //public AudioSource backgroundMusic;
     public AudioSource audioSource;
 
     void Awake()
@@ -26,7 +26,7 @@ public class AudioHandler : MonoBehaviour
     void Start()
     {
         // Play the background music when the script starts
-        backgroundMusic.Play();
+        //backgroundMusic.Play();
     }
 
     public void PlayAudioClip(AudioClip clip)

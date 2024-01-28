@@ -1394,6 +1394,7 @@ MonoBehaviour:
   groceries: {fileID: 5828404699697077611}
   dialogueText: {fileID: 1230584276}
   dialoguePanel: {fileID: 594673910}
+  clip: {fileID: 8300000, guid: 153260de50d6be14db55ca3f72d1962b, type: 3}
 --- !u!64 &359376191
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2778,7 +2779,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20ccb7aefa20bae4880d4a8ff893ca63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundMusic: {fileID: 0}
   audioSource: {fileID: 762557992}
 --- !u!4 &762557994
 Transform:
@@ -7559,6 +7559,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5258798182138035917, guid: 53703e2bc6e9d9c4181fa423880127ed, type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 153260de50d6be14db55ca3f72d1962b, type: 3}
+    - target: {fileID: 5258798182138035917, guid: 53703e2bc6e9d9c4181fa423880127ed, type: 3}
       propertyPath: taskText
       value: 
       objectReference: {fileID: 6792902282883871294}
@@ -7718,6 +7722,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 229019729}
     m_Modifications:
+    - target: {fileID: 1037243700583052899, guid: 87a2f2626ce40be44ba605efe110471d, type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 153260de50d6be14db55ca3f72d1962b, type: 3}
     - target: {fileID: 1037243700583052899, guid: 87a2f2626ce40be44ba605efe110471d, type: 3}
       propertyPath: taskText
       value: 
@@ -8982,6 +8990,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1947312135}
     - target: {fileID: 635301611411248734, guid: 7859e6a4b4836cd49984485df14d7f44, type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 153260de50d6be14db55ca3f72d1962b, type: 3}
+    - target: {fileID: 635301611411248734, guid: 7859e6a4b4836cd49984485df14d7f44, type: 3}
       propertyPath: keyCard
       value: 
       objectReference: {fileID: 853659767}
@@ -9350,7 +9362,7 @@ PrefabInstance:
     - target: {fileID: 1153892323117966600, guid: e7bce2c3969df4a4796aadaebf11d4bd, type: 3}
       propertyPath: playerMovement
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1372562923}
     - target: {fileID: 1153892323117966600, guid: e7bce2c3969df4a4796aadaebf11d4bd, type: 3}
       propertyPath: teleportDestination
       value: 

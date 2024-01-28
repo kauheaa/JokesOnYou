@@ -40,7 +40,12 @@ public class HomeDialogue : MonoBehaviour
             playerTransform.position = destination;
         }
     }
-
+    private AudioHandler audioManager;
+    public AudioClip clip;
+    private void Start()
+    {
+        audioManager = AudioHandler.instance;
+    }
     IEnumerator DisplayDialogue()
     {
         // Display the first dialogue
@@ -63,7 +68,8 @@ public class HomeDialogue : MonoBehaviour
         dialogueText.text = ""; 
         dialoguePanel.SetActive(true);
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
-        dialogueText.text = "PLAYER: They had eggs..."; 
+        dialogueText.text = "PLAYER: They had eggs...";
+        audioManager.PlayAudioClip(clip);
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
         dialogueText.text = "";
         dialoguePanel.SetActive(false);

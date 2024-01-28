@@ -51,6 +51,13 @@ public class DavDialogues : MonoBehaviour
         }
     }
     public StoreDoorTrigger doorTrigger;
+
+    private AudioHandler audioManager;
+    public AudioClip clip;
+    private void Start()
+    {
+        audioManager = AudioHandler.instance;
+    }
     IEnumerator DisplayIDDialogue()
     {
         // Display the first dialogue
@@ -64,6 +71,7 @@ public class DavDialogues : MonoBehaviour
 
         dialoguePanel.SetActive(true);
         dialogueText.text = "PLAYER: My pleasure DavID";
+        audioManager.PlayAudioClip(clip);
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
         dialogueText.text = "";
 

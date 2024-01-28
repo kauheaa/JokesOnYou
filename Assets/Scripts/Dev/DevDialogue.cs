@@ -65,6 +65,12 @@ public class DevDialogue : MonoBehaviour
             StartCoroutine(DisplayDialogue());
         }
     }
+    private AudioHandler audioManager;
+    public AudioClip clip;
+    private void Start()
+    {
+        audioManager = AudioHandler.instance;
+    }
     IEnumerator DisplayLightSwitchDialogue()
     {
         dialoguePanel.SetActive(true);
@@ -87,6 +93,7 @@ public class DevDialogue : MonoBehaviour
 
         dialoguePanel.SetActive(true);
         dialogueText.text = "Dev: It attracts bugs";
+        audioManager.PlayAudioClip(clip);
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
         dialogueText.text = "";
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
