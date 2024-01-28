@@ -10,6 +10,7 @@ public class LightSwitch : MonoBehaviour
     public bool DialogueCompleted = false;
     public GameObject dialoguePanel;
 
+    public GameObject lightBulb;
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -34,7 +35,10 @@ public class LightSwitch : MonoBehaviour
         taskText.text = "";
         DialogueCompleted = true;
         DisableLightSwitchCollider(false);
+        transform.Rotate(-180f, 0f, 0f);
 
+        Light lightComponent = lightBulb.GetComponent<Light>();
+        lightComponent.enabled = false;
     }
     void DisableLightSwitchCollider(bool disable)
     {
