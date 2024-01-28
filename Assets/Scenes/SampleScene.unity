@@ -2806,7 +2806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 600021166}
-  cameraOffset: 8
+  cameraOffset: 5
   smoothSpeed: 5
 --- !u!4 &967246923 stripped
 Transform:
@@ -3124,6 +3124,25 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1172141086 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7040868620789198316, guid: f54b12d987df39047a80e2a2f119325d, type: 3}
+  m_PrefabInstance: {fileID: 1316521419}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1172141089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172141086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1247661e0e2a8314790b797bf7dece80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  turnSpeed: 200
 --- !u!1001 &1179996464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3761,6 +3780,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 229019729}
     m_Modifications:
+    - target: {fileID: 7040868620789198316, guid: f54b12d987df39047a80e2a2f119325d, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7186574168505935229, guid: f54b12d987df39047a80e2a2f119325d, type: 3}
       propertyPath: devWall
       value: 
@@ -3844,21 +3867,10 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7186574168505935229, guid: f54b12d987df39047a80e2a2f119325d, type: 3}
   m_PrefabInstance: {fileID: 1316521419}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1372562920}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb8a98bd8d8c6245b504b0dda6eda71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1316521421 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7186574168505935228, guid: f54b12d987df39047a80e2a2f119325d, type: 3}
-  m_PrefabInstance: {fileID: 1316521419}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1247661e0e2a8314790b797bf7dece80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1329666667
@@ -4112,6 +4124,25 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1372562920 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8032942826419804210, guid: f54b12d987df39047a80e2a2f119325d, type: 3}
+  m_PrefabInstance: {fileID: 1316521419}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1372562923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372562920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1247661e0e2a8314790b797bf7dece80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  turnSpeed: 200
 --- !u!1 &1407555700
 GameObject:
   m_ObjectHideFlags: 0
@@ -7515,7 +7546,7 @@ PrefabInstance:
     - target: {fileID: 1159571856, guid: e7bce2c3969df4a4796aadaebf11d4bd, type: 3}
       propertyPath: playerMovement
       value: 
-      objectReference: {fileID: 1316521421}
+      objectReference: {fileID: 0}
     - target: {fileID: 1159571856, guid: e7bce2c3969df4a4796aadaebf11d4bd, type: 3}
       propertyPath: teleportDestination
       value: 
@@ -7531,7 +7562,7 @@ PrefabInstance:
     - target: {fileID: 1153892323117966600, guid: e7bce2c3969df4a4796aadaebf11d4bd, type: 3}
       propertyPath: playerMovement
       value: 
-      objectReference: {fileID: 1316521421}
+      objectReference: {fileID: 0}
     - target: {fileID: 1153892323117966600, guid: e7bce2c3969df4a4796aadaebf11d4bd, type: 3}
       propertyPath: teleportDestination
       value: 
