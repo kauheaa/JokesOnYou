@@ -3349,25 +3349,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1172141086 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7040868620789198316, guid: f54b12d987df39047a80e2a2f119325d, type: 3}
+--- !u!95 &1172141091 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4960574617284701921, guid: f54b12d987df39047a80e2a2f119325d, type: 3}
   m_PrefabInstance: {fileID: 1316521419}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1172141089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1172141086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1247661e0e2a8314790b797bf7dece80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  turnSpeed: 200
 --- !u!1001 &1179996464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4367,6 +4353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  animator: {fileID: 1172141091}
   turnSpeed: 200
 --- !u!1 &1407555700
 GameObject:
